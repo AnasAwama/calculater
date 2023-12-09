@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    margin:0;
+}
+
+.column1, .column2 {
+    display: inline-block; 
+    vertical-align: top; 
+    padding: 10px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+}
