@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="slider.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -9,70 +12,72 @@
         <div>
             <form>
                 <textarea>0</textarea>
-                <table>
-                    <!-- functions pad -->
-                    <tr>
-                        <tr>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                            <td><input type="button" value="x!" onclick=""/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="sin" onclick=""/></td>
-                            <td><input type="button" value="ln" onclick=""/></td>
-                            <td><input type="button" value="π" onclick=""/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="cos" onclick=""/></td>
-                            <td><input type="button" value="log" onclick=""/></td>
-                            <td><input type="button" value="e" onclick=""/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="tan" onclick=""/></td>
-                            <td><input type="button" value="√" onclick=""/></td>
-                            <td><button>x<sup>y</sup></button></td>
-                        </tr>
-                    </tr>
-
-                    <!-- number pad -->
-                    <tr>
-                        <tr>
-                            <td><input type="button" value="(" onclick=""/></td>
-                            <td><input type="button" value=")" onclick=""/></td>
-                            <td><input type="button" value="%" onclick=""/></td>
-                            <td><input type="button" value="AC" onclick=""/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="7" onclick=""/></td>
-                            <td><input type="button" value="8" onclick=""/></td>
-                            <td><input type="button" value="9" onclick=""/></td>
-                            <td><input type="button" value="÷" onclick=""/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="4" onclick=""/></td>
-                            <td><input type="button" value="5" onclick=""/></td>
-                            <td><input type="button" value="6" onclick=""/></td>
-                            <td><input type="button" value="×" onclick=""/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="1" onclick=""/></td>
-                            <td><input type="button" value="2" onclick=""/></td>
-                            <td><input type="button" value="3" onclick=""/></td>
-                            <td><input type="button" value="-" onclick=""/></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" value="0" onclick=""/></td>
-                            <td><input type="button" value="." onclick=""/></td>
-                            <td><input type="button" value="=" onclick=""/></td>
-                            <td><input type="button" value="+" onclick=""/></td>
-                        </tr>
-                    </tr>
-
-                </table>
+                <!-- functions pad -->
+                <div class="row">
+                    <div class="column">
+                        <table>
+                                <tr>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </td>
+                                    <td><input type="button" value="x!" onclick=""/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="sin" onclick=""/></td>
+                                    <td><input type="button" value="ln" onclick=""/></td>
+                                    <td><input type="button" value="π" onclick=""/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="cos" onclick=""/></td>
+                                    <td><input type="button" value="log" onclick=""/></td>
+                                    <td><input type="button" value="e" onclick=""/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="tan" onclick=""/></td>
+                                    <td><input type="button" value="√" onclick=""/></td>
+                                    <td><button>x<sup>y</sup></button></td>
+                                </tr>
+                        </table>
+                    </div>
+                <!-- number pad -->
+                    <div class="column">
+                        <table>
+                                <tr>
+                                    <td><input type="button" value="(" onclick=""/></td>
+                                    <td><input type="button" value=")" onclick=""/></td>
+                                    <td><input type="button" value="%" onclick=""/></td>
+                                    <td><input type="button" value="AC" onclick=""/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="7" onclick=""/></td>
+                                    <td><input type="button" value="8" onclick=""/></td>
+                                    <td><input type="button" value="9" onclick=""/></td>
+                                    <td><input type="button" value="÷" onclick=""/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="4" onclick=""/></td>
+                                    <td><input type="button" value="5" onclick=""/></td>
+                                    <td><input type="button" value="6" onclick=""/></td>
+                                    <td><input type="button" value="×" onclick=""/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="1" onclick=""/></td>
+                                    <td><input type="button" value="2" onclick=""/></td>
+                                    <td><input type="button" value="3" onclick=""/></td>
+                                    <td><input type="button" value="-" onclick=""/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="0" onclick=""/></td>
+                                    <td><input type="button" value="." onclick=""/></td>
+                                    <td><input type="button" value="=" onclick=""/></td>
+                                    <td><input type="button" value="+" onclick=""/></td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
             </form>
         </div>
     </body>
