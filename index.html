@@ -5,11 +5,12 @@
         <link rel="stylesheet" href="slider.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <style>
-        input, button{
-            margin: 5px;
-        }
-    </style>
+        <link rel="stylesheet" href="CalcJs.js">
+        <style>
+            input, button{
+                margin: 5px;
+            }
+        </style>
     </head>
 
     <body style="background-color: rgb(31 31 31); text-align: center">
@@ -17,7 +18,7 @@
         <div style="margin-top: 10px;">
             <form>
                 <!-- functions pad -->
-                <textarea>0</textarea>
+                <textarea id="text">0</textarea>
                 <div class="rows">
                     
                     <div class="column1">
@@ -29,22 +30,22 @@
                                             <span class="slider round"></span>
                                         </label>
                                     </td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="x!" onclick=""/></td>
+                                    <td><input type="button" class="btn btn-light" value="x!" onclick="calculation()"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="sin" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="ln" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="π" onclick=""/></td>
+                                    <td><input type="button" class="btn btn-light" value="sin" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="ln" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="π" onclick="calculation()"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="cos" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="log" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="e" onclick=""/></td>
+                                    <td><input type="button" class="btn btn-light" value="cos" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="log" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="e" onclick="calculation()"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="tan" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="√" onclick=""/></td>
-                                    <td><button class="btn btn-outline-secondary" >x<sup>y</sup></button></td>
+                                    <td><input type="button" class="btn btn-light" value="tan" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="√" onclick="calculation()"/></td>
+                                    <td><button class="btn btn-light" >x<sup>y</sup></button></td>
                                 </tr>
                         </table>
                     </div>
@@ -52,34 +53,34 @@
                     <div class="column2">
                         <table>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="("  onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value=")" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="%" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-warning" value="AC" onclick=""/></td>
+                                    <td><input type="button" id="" class="btn btn-light" value="("  onclick="calculation()"/></td>
+                                    <td><input type="button" id="" class="btn btn-light" value=")" onclick="calculation()"/></td>
+                                    <td><input type="button" id="mode" class="btn btn-light" value="%" onclick="calculation()"/></td>
+                                    <td><input type="button" id="clear" class="btn btn-light" value="AC" onclick="calculation()"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-light" value="7" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-light" value="8" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-light" value="9" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="÷" onclick=""/></td>
+                                    <td><input type="button" id="seven" class="btn btn-secondary" value="7" onclick="calculation()"/></td>
+                                    <td><input type="button" id="ehight" class="btn btn-secondary" value="8" onclick="calculation()"/></td>
+                                    <td><input type="button" id="nine" class="btn btn-secondary" value="9" onclick="calculation()"/></td>
+                                    <td><input type="button" id="division" class="btn btn-light" value="÷" onclick="calculation()"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-light" value="4" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-light" value="5" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-light" value="6" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="×" onclick=""/></td>
+                                    <td><input type="button" id="four" class="btn btn-secondary" value="4" onclick="calculation()"/></td>
+                                    <td><input type="button" id="five" class="btn btn-secondary" value="5" onclick="calculation()"/></td>
+                                    <td><input type="button" id="six" class="btn btn-secondary" value="6" onclick="calculation()"/></td>
+                                    <td><input type="button" id="mutliply" class="btn btn-light" value="×" onclick="calculation()"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-light" value="1" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-light" value="2" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-light" value="3" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="-" onclick=""/></td>
+                                    <td><input type="button" id="one" class="btn btn-secondary" value="1" onclick="calculation()"/></td>
+                                    <td><input type="button" id="two" class="btn btn-secondary" value="2" onclick="calculation()"/></td>
+                                    <td><input type="button" id="three" class="btn btn-secondary" value="3" onclick="calculation()"/></td>
+                                    <td><input type="button" id="subtract" class="btn btn-light" value="-" onclick="calculation()"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-outline-light" value="0" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-light" value="." onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="=" onclick=""/></td>
-                                    <td><input type="button" class="btn btn-outline-secondary" value="+" onclick=""/></td>
+                                    <td><input type="button" id="zero" class="btn btn-secondary" value="0" onclick="calculation()"/></td>
+                                    <td><input type="button" id="dote" class="btn btn-secondary" value="." onclick="calculation()"/></td>
+                                    <td><input type="button" id="result" class="btn btn-primary" value="=" onclick="calculation()"/></td>
+                                    <td><input type="button" id="add" class="btn btn-light" value="+" onclick="calculation()"/></td>
                                 </tr>
                         </table>
                     </div>
