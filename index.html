@@ -18,7 +18,7 @@
         <div style="margin-top: 10px;">
             <form>
                 <!-- functions pad -->
-                <textarea id="text">0</textarea>
+                <textarea id="text"></textarea>
                 <div class="rows">
                     
                     <div class="column1">
@@ -26,26 +26,26 @@
                                 <tr>
                                     <td>
                                         <label class="switch">
-                                            <input type="checkbox">
+                                            <input type="checkbox" onclick="Switchs()">
                                             <span class="slider round"></span>
                                         </label>
                                     </td>
-                                    <td><input type="button" class="btn btn-light" value="x!" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="x!" onclick="calculation('!')"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-light" value="sin" onclick="calculation()"/></td>
-                                    <td><input type="button" class="btn btn-light" value="ln" onclick="calculation()"/></td>
-                                    <td><input type="button" class="btn btn-light" value="π" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="sin" onclick="calculation('sin(')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="ln" onclick="calculation('ln(')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="π" onclick="calculation('pi')"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-light" value="cos" onclick="calculation()"/></td>
-                                    <td><input type="button" class="btn btn-light" value="log" onclick="calculation()"/></td>
-                                    <td><input type="button" class="btn btn-light" value="e" onclick="calculation()"/></td>
+                                    <td><input type="button" class="btn btn-light" value="cos" onclick="calculation('cos(')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="log" onclick="calculation('log(')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="e" onclick="calculation('e')"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" class="btn btn-light" value="tan" onclick="calculation()"/></td>
-                                    <td><input type="button" class="btn btn-light" value="√" onclick="calculation()"/></td>
-                                    <td><button class="btn btn-light" >x<sup>y</sup></button></td>
+                                    <td><input type="button" class="btn btn-light" value="tan" onclick="calculation('tan(')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="√" onclick="calculation('root(')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="x^y" onclick="calculation('^')"></td>
                                 </tr>
                         </table>
                     </div>
@@ -56,7 +56,7 @@
                                     <td><input type="button" id="" class="btn btn-light" value="("  onclick="calculation('(')"/></td>
                                     <td><input type="button" id="" class="btn btn-light" value=")" onclick="calculation(')')"/></td>
                                     <td><input type="button" id="mode" class="btn btn-light" value="%" onclick="calculation('%')"/></td>
-                                    <td><input type="button" id="clear" class="btn btn-light" value="AC" onclick="calculation('ac')"/></td>
+                                    <td><input type="button" id="clear" class="btn btn-light" value="AC" onclick="clearing()"/></td>
                                 </tr>
                                 <tr>
                                     <td><input type="button" id="seven" class="btn btn-secondary" value="7" onclick="calculation('7')"/></td>
@@ -79,7 +79,7 @@
                                 <tr>
                                     <td><input type="button" id="zero" class="btn btn-secondary" value="0" onclick="calculation('0')"/></td>
                                     <td><input type="button" id="dote" class="btn btn-secondary" value="." onclick="calculation('.')"/></td>
-                                    <td><input type="button" id="result" class="btn btn-primary" value="=" onclick="calculation('=')"/></td>
+                                    <td><input type="button" id="result" class="btn btn-primary" value="=" onclick="results()"/></td>
                                     <td><input type="button" id="add" class="btn btn-light" value="+" onclick="calculation('+')"/></td>
                                 </tr>
                         </table>
