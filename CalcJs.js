@@ -1,4 +1,4 @@
-const specialChar=['+','%','-','÷','x','!','sin(','ln(','pi','cos(','log(','e','tan(','root(','^'];
+const specialChar=['+','%','-','÷','x','!','sin(','asin(','ln(','pi','cos(','log(','e','tan(','root(','^'];
 let findChar;
 let currentText;
 var enableSwitch=false;
@@ -69,6 +69,15 @@ else{
           case 'tan(':
             document.getElementById('text').value=Math.tan(number2)
           break;
+          case 'atan(':
+            document.getElementById('text').value=Math.atan(number2)
+          break;
+          case 'asin(':
+            document.getElementById('text').value=Math.asin(number2)
+          break;
+          case 'acos(':
+            document.getElementById('text').value=Math.acos(number2)
+          break;
           case '!':
             var val=factorialize(number1)
             document.getElementById('text').value=val
@@ -76,6 +85,9 @@ else{
           case '^':
             document.getElementById('text').value=Math.pow(number1,number2)
           break;
+          case '.':
+            dotVal();
+            break;
         default:
           break;
       }
@@ -101,6 +113,29 @@ function Switchs(){
         }
     });
 
+    if(enableSwitch==true){
+      var asin = document.getElementById('sin');
+      var acos = document.getElementById('cos');
+      var atan = document.getElementById('tan');
+      asin.value = 'asin';
+      acos.value = 'acos';
+      atan.value = 'atan';
+    }
+    else{
+      var asin = document.getElementById('sin');
+      var acos = document.getElementById('cos');
+      var atan = document.getElementById('tan');
+      asin.value = 'sin';
+      acos.value = 'cos';
+      atan.value = 'tan';
+    }
+
+    // var asin = document.getElementById('sin');
+    // var acos = document.getElementById('cos');
+    // var atan = document.getElementById('tan');
+    // asin.value = 'asin';
+    // acos.value = 'acos';
+    // atan.value = 'atan';
     
 
 }
@@ -108,4 +143,16 @@ document.querySelector('.switch input').addEventListener('change', Switchs);
 
 function clearing(){
     document.getElementById('text').value="";
+}
+
+function dotVal(dotValue){
+  
+  findChar = dotValue.find(char => currentText.includes(char));
+  if(findChar=="."){
+    document.getElementById('text').value = currentText
+  }
+  else{
+    document.getElementById('text').value = currentText+'.';
+  }
+
 }
