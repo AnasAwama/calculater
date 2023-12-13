@@ -1,7 +1,9 @@
-const specialChar=['+','%','-','÷','x','!','sin(','asin(','ln(','pi','cos(','log(','e','tan(','root(','^'];
+const specialChar=['^2','10^','e^','+','%','-','÷','x','!','sin(','asin(','ln(','pi','cos(','log(','e','tan(','root(','^'];
 let findChar;
 let currentText;
 var enableSwitch=false;
+let dotUsed = false;
+let ans = 0;
 
 var buttons = document.querySelectorAll('td').value;
 
@@ -9,8 +11,10 @@ addValue.addEventListener("click",calculation)
 
 function calculation(value) {
     currentText = document.getElementById("text").value;
-    document.getElementById("text").value = currentText + value;
     
+    dotUsed = false;
+
+    document.getElementById("text").value = currentText + value;
     findChar= specialChar.find(char => currentText.includes(char));
     
 }
@@ -85,12 +89,20 @@ else{
           case '^':
             document.getElementById('text').value=Math.pow(number1,number2)
           break;
-          case '.':
-            dotVal();
-            break;
+          case '^2':
+            document.getElementById('text').value=Math.pow(number1,2)
+          break;
+          case '10^':
+            document.getElementById('text').value=Math.pow(10,number2)
+          break;
+          case 'e^':
+            document.getElementById('text').value=Math.pow(Math.E,number2)
+          break;
         default:
           break;
       }
+      ans=document.getElementById('text').value;
+      console.log("Answer butten"+ans);
 
 }
 
@@ -145,14 +157,22 @@ function clearing(){
     document.getElementById('text').value="";
 }
 
-function dotVal(dotValue){
-  
-  findChar = dotValue.find(char => currentText.includes(char));
-  if(findChar=="."){
-    document.getElementById('text').value = currentText
+function dotVal() {
+  if (!currentText.endsWith('.') && !currentText.includes('.')) {
+      currentText = document.getElementById('text').value = currentText + '.';
   }
-  else{
-    document.getElementById('text').value = currentText+'.';
-  }
+}
 
+function dotButtonClicked() {
+  if (!dotUsed) {
+      currentText = document.getElementById("text").value;
+      document.getElementById("text").value = currentText + '.';
+      dotUsed = true;
+  }
+}
+document.getElementById('dotButton').addEventListener('click', dotButtonClicked);
+
+function ansButten(){
+
+  document.getElementById("text").value = ans;
 }
