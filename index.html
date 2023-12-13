@@ -31,6 +31,7 @@
                                         </label>
                                     </td>
                                     <td><input type="button" class="btn btn-light" value="x!" onclick="calculation('!')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="ANS" onclick="ansButten()"/></td>
                                 </tr>
                                 <tr>
                                     <td><input type="button" class="btn btn-light" id="sin" value="sin" onclick="calculation(this.value+'(')"/></td>
@@ -45,7 +46,12 @@
                                 <tr>
                                     <td><input type="button" class="btn btn-light" id="tan" value="tan" onclick="calculation(this.value+'(')"/></td>
                                     <td><input type="button" class="btn btn-light" value="√" onclick="calculation('root(')"/></td>
-                                    <td><input type="button" class="btn btn-light" value="x^y" onclick="calculation('^')"></td>
+                                    <td><input type="button" class="btn btn-light" value="xʸ" onclick="calculation('^')"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" class="btn btn-light" value="eˣ" onclick="calculation('e^')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="10ˣ" onclick="calculation('10^')"/></td>
+                                    <td><input type="button" class="btn btn-light" value="x²" onclick="calculation('^2')"></td>
                                 </tr>
                         </table>
                     </div>
@@ -78,7 +84,7 @@
                                 </tr>
                                 <tr>
                                     <td><input type="button" id="zero" class="btn btn-secondary" value="0" onclick="calculation('0')"/></td>
-                                    <td><input type="button" id="dote" class="btn btn-secondary" value="." onclick="dotVal('.')"/></td>
+                                    <td><input type="button" id="dote" class="btn btn-secondary" value="." onclick="dotButtonClicked()"/></td>
                                     <td><input type="button" id="result" class="btn btn-primary" value="=" onclick="results()"/></td>
                                     <td><input type="button" id="add" class="btn btn-light" value="+" onclick="calculation('+')"/></td>
                                 </tr>
